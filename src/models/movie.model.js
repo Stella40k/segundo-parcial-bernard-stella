@@ -1,5 +1,4 @@
 //?import { Sequelize } from "";
-
 //?async function main() {
   //?  const connection = mysql.createConnection({
   //?      DB_NAME: "movies",
