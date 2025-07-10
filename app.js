@@ -1,10 +1,16 @@
 import express from "express";
 import "dotenv/config"
-
+import routes from "./src/routes/movie.routes.js";
+import { conn } from "./src/config/database.js";
 
 const app = express();
-const PORT = process.env.PORT;
+const port = process.env.PORT;
 
-app.listen(PORT, () => {
-    console.log(`Puerto escuchado en: ${PORT}`);
-});perm
+app.use(express.json());
+app.use("/api/movies", routes);
+
+app.listen(port, () =>{
+    console.log(`server corriendo en el puerto ${port}`)
+});
+
+conn()

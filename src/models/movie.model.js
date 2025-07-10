@@ -1,28 +1,35 @@
-import { Sequelize } from "sequelize";
-const sequelize = new Sequelize()
+import { sequelize } from "../config/database.js";
+import { DataTypes } from "sequelize";
 
-const Movie = sequelize.define("movie", {
-      id: {
-        type: sequelize.INTEGER,
-        autoIncrement: true,
+
+const Music = sequelize.define()
+export const Movie = sequelize.define("Movies", {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    title: {
+        type: DataTypes.STRING,
         allowNull: false
-      },
-     title:{
-        DataTypes.STRING(35)
-
-     },
-     director:{
-        DataTypes.TEXT
-     },
-     duration:{
-         DataTypes.TEXT
-     },
-     genre:{
-        DataTypes.TEXT
-     },
-     description: {
-
-     }
-})
-
-export default Character;
+    },
+    director: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    duration: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    genere: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+},{
+    timestamps:false
+}
+);
