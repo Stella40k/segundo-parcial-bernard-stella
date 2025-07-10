@@ -10,3 +10,5 @@ app.use(express.json());
 app.listen(PORT, () =>{
     console.log(`Se escucha el pueto en ${PORT}`)
 })
+
+connect()
