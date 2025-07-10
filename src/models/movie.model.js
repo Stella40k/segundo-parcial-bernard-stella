@@ -24,4 +24,5 @@ export const Peliculas = sequelize.define("Pelicula",
             type:DataTypes.STRING
         },
     }
+    
 );
